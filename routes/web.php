@@ -26,3 +26,12 @@ Auth::routes();
 
 Route::get('/admin', 'AdminController@index')->name('admin.index');
 
+
+// Routes for sports
+Route::get('/admin/sports', 'SportController@index')->name('admin.sports.index');
+Route::get('/admin/sports/create', 'SportController@create')->name('admin.sports.create');
+Route::post('/admin/sports/store', 'SportController@store')->name('admin.sports.store');
+Route::get('/admin/sports/delete/{sport}', 'SportController@destroy')->name('admin.sports.delete');
+Route::get('/admin/sports/{sport}', 'SportController@edit')->name('admin.sports.edit');
+Route::put('/admin/sports/update/{sport}', 'SportController@update')->name('admin.sports.update');
+

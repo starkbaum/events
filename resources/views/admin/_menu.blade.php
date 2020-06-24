@@ -6,5 +6,10 @@
                 {{ __('Dashboard') }}
             </a>
         </li>
+        <li >
+            <a href="{{ route('admin.sports.index') }}" class="block p-4 text-grey-darker font-hairline border-teal-500 border-l-8 tracking-wide">
+                {{ __('Sportarten') }}
+            </a>
+        </li>
     </ul>
 </div>

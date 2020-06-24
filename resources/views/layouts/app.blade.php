@@ -11,9 +11,12 @@
 
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}" defer></script>
-    
+
     <!-- Styles -->
     <link href="{{ mix('css/app.css') }}" rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <script src="https://kit.fontawesome.com/6cc5caa0ba.js" crossorigin="anonymous"></script>
 </head>
 <body class="bg-gray-100 h-screen antialiased leading-none">
     <div id="app">
@@ -47,7 +50,9 @@
             </div>
         </nav>
 
-        @yield('content')
+        <main class="container mx-auto">
+            @yield('content')
+        </main>
     </div>
 </body>
 </html>
