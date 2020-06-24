@@ -26,7 +26,10 @@ class SportController extends Controller
      */
     public function create()
     {
-        return view('sports.create');
+        $colors = Sport::getColors();
+
+
+        return view('sports.create', compact('colors'));
     }
 
     /**
@@ -37,6 +40,8 @@ class SportController extends Controller
      */
     public function store(Request $request)
     {
+
+
         if (!Sport::colorIsValid($request->get('color'))) {
 
             return redirect()
@@ -58,13 +63,8 @@ class SportController extends Controller
      */
     public function show(Sport $sport)
     {
-        //dd($sport);
-
         $events = $sport->events;
         $sports = Sport::all();
-
-
-        //dd($events);
 
         return view('home', compact('events', 'sports'));
     }
@@ -77,7 +77,10 @@ class SportController extends Controller
      */
     public function edit(Sport $sport)
     {
-        return view('sports.edit', compact('sport'));
+        $colors = Sport::getColors();
+
+
+        return view('sports.edit', compact(['sport', 'colors']));
     }
 
     /**

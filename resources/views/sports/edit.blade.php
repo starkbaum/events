@@ -62,17 +62,18 @@
                                 value = {{ $sport->name }}
                             >
                         </div>
-                        <div class = "w-full px-3">
-                            <label class = "block uppercase tracking-wide text-gray-900 text-xs font-bold mb-2" for = "color">
-                                {{ __('Farbe') }}
+                        <div class="w-full px-3">
+                            <label class="block uppercase tracking-wide text-gray-900 text-xs font-bold mb-2" for="color">
+                                {{ __('Farbe *') }}
                             </label>
-                            <input
-                                class = "appearance-none block w-full bg-white text-gray-900 border border-gray-900 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-gray-100 focus:border-gray-500"
-                                id = "color"
-                                type = "text"
-                                name = "color"
-                                value = {{ $sport->color }}
+                            <select
+                                class="appearance-none block w-full bg-white text-gray-900 border border-gray-900 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-gray-100 focus:border-gray-500"
+                                name="color"
                             >
+                                @foreach ($colors as $key => $value)
+                                <option value="{{ $key }}" {{ $key === $sport->color ? 'selected' : '' }}>{{ $value }}</option>
+                                @endforeach
+                            </select>
                         </div>
                     </div>
                     <div class = "md:flex md:items-center">
