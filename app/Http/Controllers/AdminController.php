@@ -2,6 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\User;
+use App\Sport;
+use App\Event;
 use Illuminate\Http\Request;
 
 class AdminController extends Controller
@@ -13,6 +16,10 @@ class AdminController extends Controller
      */
     public function index()
     {
-        return view('admin.index');
+        $userCount = User::count();
+        $sportsCount = Sport::count();
+        $eventsCount = Event::count();
+
+        return view('admin.index', compact(['userCount', 'sportsCount', 'eventsCount']));
     }
 }
