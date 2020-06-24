@@ -4,9 +4,26 @@
 
 <div class="flex flex-wrap -mx-2 overflow-hidden">
 
+
     <div class="my-2 px-2 w-1/5 overflow-hidden">
         <!-- Column Content -->
-        <div class="bg-white text-gray-800 shadow w-52 rounded">
+        <form
+            class="w-full h-10 pl-3 pr-2 bg-white border rounded flex justify-between items-center relative"
+            action="{{ route('search') }}"
+            method="GET"
+        >
+            <input type="search" name="search" id="search" placeholder="Search"
+                class="appearance-none w-full outline-none focus:outline-none active:outline-none"/>
+            <button type="submit" class="ml-1 outline-none focus:outline-none active:outline-none">
+            <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                viewBox="0 0 24 24" class="w-6 h-6">
+                <path d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+            </svg>
+            </button>
+        </form>
+
+
+        <div class="bg-white text-gray-800 shadow w-52 rounded mt-4">
             <ul class="list-reset">
                 <li >
                     <a href="{{ route('home') }}" class="block p-4 text-grey-darker font-hairline border-teal-500 border-l-8 tracking-wide">
@@ -26,7 +43,6 @@
 
     <div class="my-2 px-2 w-4/5 overflow-hidden">
         <!-- Column Content -->
-
         @foreach ($events as $event)
         <div class="lg:flex shadow rounded-lg mb-4">
             <div class="bg-{{ $event->sport->color }}-600 rounded-lg lg:w-2/12 py-4 block h-full shadow-inner">

@@ -36,3 +36,6 @@ Route::get('/admin/sports/delete/{sport}', 'SportController@destroy')->name('adm
 Route::get('/admin/sports/{sport}', 'SportController@edit')->name('admin.sports.edit');
 Route::put('/admin/sports/update/{sport}', 'SportController@update')->name('admin.sports.update');
 Route::get('/sports/{sport}', 'SportController@show')->name('sports.show');
+
+// Routes for searching
+Route::get('/search', 'SearchController@index')->name('search');
