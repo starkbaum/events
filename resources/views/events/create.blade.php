@@ -127,13 +127,14 @@
                             <label class="block uppercase tracking-wide text-gray-900 text-xs font-bold mb-2" for="_sport_id">
                                 {{ __('Sportart *') }}
                             </label>
-                            <input
+                            <select
                                 class="appearance-none block w-full bg-white text-gray-900 border border-gray-900 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-gray-100 focus:border-gray-500"
-                                id="_sport_id"
-                                type="text"
                                 name="_sport_id"
-                                value={{ old('_sport_id') }}
                             >
+                                @foreach ($sports as $sport)
+                                <option value="{{ $sport->id }}">{{ $sport->name }}</option>
+                                @endforeach
+                            </select>
                         </div>
                     </div>
                     <div class="md:flex md:items-center">

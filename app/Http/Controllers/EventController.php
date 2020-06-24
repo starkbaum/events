@@ -27,7 +27,9 @@ class EventController extends Controller
      */
     public function create()
     {
-        return view('events.create');
+        $sports = Sport::all();
+
+        return view('events.create', compact('sports'));
     }
 
     /**
@@ -80,7 +82,9 @@ class EventController extends Controller
      */
     public function edit(Event $event)
     {
-        return view('events.edit', compact('event'));
+        $sports = Sport::all();
+
+        return view('events.edit', compact('event', 'sports'));
     }
 
     /**

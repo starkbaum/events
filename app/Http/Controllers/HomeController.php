@@ -15,7 +15,7 @@ class HomeController extends Controller
      */
     public function index()
     {
-        $events = Event::all();
+        $events = Event::all()->sortBy('date');
         $sports = Sport::all();
 
         return view('home', compact(['events', 'sports']));

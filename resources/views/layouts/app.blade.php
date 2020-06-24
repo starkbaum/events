@@ -25,7 +25,7 @@
                 <div class="flex items-center justify-center">
                     <div class="mr-6">
                         <a href="{{ url('/') }}" class="text-lg font-semibold text-gray-100 no-underline">
-                            {{ config('app.name', 'Laravel') }}
+                            {{ config('app.name', 'Sport Kalender') }}
                         </a>
                     </div>
                     <div class="flex-1 text-right">

@@ -45,8 +45,7 @@
                 @foreach ($sports as $sport)
                     <tr class="hover:bg-gray-200">
                     <td class="w-1/10 text-left py-3 px-4">{{ $sport->id }}</td>
-                    <td class="w-4/10 text-left py-3 px-4">
-                        <a href="#">{{ $sport->name }}</a></td>
+                    <td class="w-4/10 text-left py-3 px-4">{{ $sport->name }}</td>
                     <td class="w-1/10 text-left py-3 px-4 text-{{ $sport->color }}-600">{{ $sport->color }}</td>
                     <td class="w-1/10 text-center py-3 px-4">
                         <a class="hover:text-teal-500 mr-1" href="{{ route('admin.sports.edit', $sport->id) }}"><i class="far fa-edit"></i></a>
