@@ -58,7 +58,15 @@ class SportController extends Controller
      */
     public function show(Sport $sport)
     {
-        //
+        //dd($sport);
+
+        $events = $sport->events;
+        $sports = Sport::all();
+
+
+        //dd($events);
+
+        return view('home', compact('events', 'sports'));
     }
 
     /**

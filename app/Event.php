@@ -14,6 +14,8 @@ class Event extends Model
 
     /**
      * Returns the date as formatted string
+     *
+     * @return string
      */
     public function getFormattedDate(): string
     {
@@ -25,6 +27,26 @@ class Event extends Model
 
 
         return $formattedDate;
+    }
+
+    /**
+     * Returns the day as string
+     *
+     * @return string
+     */
+    public function getDay(): string
+    {
+        return Carbon::create($this->date)->day;
+    }
+
+    /**
+     * Returns the shortened month as string
+     *
+     * @return string
+     */
+    public function getMonth(): string
+    {
+        return Carbon::create($this->date)->locale('de')->shortMonthName;
     }
 
     public function sport()

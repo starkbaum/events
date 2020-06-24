@@ -56,7 +56,7 @@ class EventController extends Controller
         }
 
 
-        $sport->event()->save($event);
+        $sport->events()->save($event);
 
         return redirect()->route('admin.events.index');
     }

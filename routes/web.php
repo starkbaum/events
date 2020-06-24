@@ -13,14 +13,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
-
-
-
-
-Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/', 'HomeController@index')->name('home');
 Auth::routes();
 
 
@@ -41,3 +34,4 @@ Route::post('/admin/sports/store', 'SportController@store')->name('admin.sports.
 Route::get('/admin/sports/delete/{sport}', 'SportController@destroy')->name('admin.sports.delete');
 Route::get('/admin/sports/{sport}', 'SportController@edit')->name('admin.sports.edit');
 Route::put('/admin/sports/update/{sport}', 'SportController@update')->name('admin.sports.update');
+Route::get('/sports/{sport}', 'SportController@show')->name('sports.show');

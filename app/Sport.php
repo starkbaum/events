@@ -26,8 +26,8 @@ class Sport extends Model
         return in_array($color, $colors);
     }
 
-    public function event()
+    public function events()
     {
-        return $this->hasMany(Event::class, 'id', '_sport_id');
+        return $this->hasMany(Event::class, '_sport_id', 'id');
     }
 }
